@@ -1,3 +1,4 @@
+import 'package:fcc_crypto_wallet_firebase_flutter/home_view.dart';
 import 'package:fcc_crypto_wallet_firebase_flutter/net/flutterfire.dart';
 import 'package:flutter/material.dart';
 
@@ -55,6 +56,12 @@ class _AuthemticationState extends State<AuthenticationScreen> {
                     bool success = await register(_email.text, _password.text);
                     if (success) {
                       print("Successful");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => HomeView(),
+                        ),
+                      );
                     }
                   },
                 ),
@@ -65,6 +72,12 @@ class _AuthemticationState extends State<AuthenticationScreen> {
                     bool success = await signIn(_email.text, _password.text);
                     if (success) {
                       print("Successful");
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => HomeView(),
+                        ),
+                      );
                     }
                   },
                 ),

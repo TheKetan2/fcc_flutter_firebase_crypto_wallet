@@ -2,10 +2,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 Future<bool> signIn(String email, String password) async {
   try {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
+    final auth = await FirebaseAuth.instance.signInWithEmailAndPassword(
       email: email,
       password: password,
     );
+    print(auth.user?.uid.toString());
     return true;
   } on FirebaseAuthException catch (e) {
     if (e.code == "weak-password") {
@@ -22,10 +23,11 @@ Future<bool> signIn(String email, String password) async {
 
 Future<bool> register(String email, String password) async {
   try {
-    await FirebaseAuth.instance.createUserWithEmailAndPassword(
+    final auth = await FirebaseAuth.instance.createUserWithEmailAndPassword(
       email: email,
       password: password,
     );
+    print(auth.user?.uid.toString());
     return true;
   } on FirebaseAuthException catch (e) {
     if (e.code == "weak-password") {
