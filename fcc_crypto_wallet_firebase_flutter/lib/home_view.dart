@@ -37,6 +37,7 @@ class _HomeViewState extends State<HomeView> {
                 itemCount: snapshot.data?.docs.length,
                 itemBuilder: (context, index) {
                   final document = snapshot.data?.docs[index];
+
                   return Container(
                     margin: const EdgeInsets.only(
                       left: 8,
@@ -51,7 +52,7 @@ class _HomeViewState extends State<HomeView> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Text("Coin Name: ${document?["crypto"]}"),
+                        Text("Coin Name: ${document?.id}"),
                         Text("Amount Owned: ${document?["amount"]}"),
                       ],
                     ),
