@@ -66,12 +66,15 @@ class _AddViewState extends State<AddView> {
             ),
             CustomButton(
               title: "Add",
-              onPressed: () {
-                addCoin(
+              onPressed: () async {
+                await addCoin(
                   selectedCoin,
                   _amountController.text,
+                ).then(
+                  (value) {
+                    Navigator.pop(context);
+                  },
                 );
-                Navigator.pop(context);
               },
             ),
           ],
