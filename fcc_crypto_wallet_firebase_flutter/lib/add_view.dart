@@ -40,7 +40,7 @@ class _AddViewState extends State<AddView> {
                           ))
                   .toList(),
               onChanged: (String? value) {
-                print(value);
+                // print(value);
                 setState(
                   () {
                     selectedCoin = value!;
